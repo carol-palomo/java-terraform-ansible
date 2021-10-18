@@ -1,7 +1,7 @@
 cd ./terraform/
-~/projetos/java-terraform-ansible/terraform/terraform init
-~/projetos/java-terraform-ansible/terraform/terraform validate
-~/projetos/java-terraform-ansible/terraform/terraform apply -auto-approve
+terraform init
+terraform validate
+terraform apply -auto-approve
 
 
 echo "Aguardando criação de maquinas ..."
