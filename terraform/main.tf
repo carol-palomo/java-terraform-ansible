@@ -72,3 +72,7 @@ resource "aws_security_group" "allow_ssh_tf_carol" {
     Name = "allow_ssh_tf_carol"
   }
 }
+
+output "aws_instance_e_ssh" {
+  value = aws_instance.web.public_dns
+}
