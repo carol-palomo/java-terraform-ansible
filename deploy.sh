@@ -1,4 +1,4 @@
-cd ./terraform/
+cd ../terraform
 ~/terraform/terraform init
 ~/terraform/terraform validate
 ~/terraform/terraform apply -auto-approve
