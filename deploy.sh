@@ -3,6 +3,7 @@ terraform init
 terraform validate
 terraform apply -auto-approve
 
+
 echo "Aguardando criação de maquinas ..."
 sleep 30 # 30 segundos
 
