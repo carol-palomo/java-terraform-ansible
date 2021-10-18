@@ -1,2 +1,2 @@
 cd terraform
-~/terraform/terraform destroy -auto-approve
+~/terraform destroy -auto-approve
