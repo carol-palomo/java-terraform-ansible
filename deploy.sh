@@ -1,7 +1,7 @@
 cd ./terraform/
-terraform init
-terraform validate
-terraform apply -auto-approve
+'terraform init'
+'terraform validate'
+'terraform apply -auto-approve'
 
 
 echo "Aguardando criação de maquinas ..."
