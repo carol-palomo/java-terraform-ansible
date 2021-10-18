@@ -1,0 +1,23 @@
+cd ../terraform
+~/terraform/terraform init
+~/terraform/terraform validate
+~/terraform/terraform apply -auto-approve
+
+echo "Aguardando criação de maquinas ..."
+sleep 10 # 10 segundos
+
+echo $"[ec2-java]" > ../ansible/hosts # cria arquivo
+echo "$(~/terraform/terraform output | awk '{print $3;exit}')" >> ../ansible/hosts # captura output faz split de espaco e replace de ",
+
+echo "Aguardando criação de maquinas ..."
+sleep 10 # 20 segundos
+
+cd ../ansible
+sudo ansible-playbook -i hosts playbook.yml -u ubuntu --private-key /root/.ssh/id_rsa
+
+cd ../terraform
+
+open "http://$(~/terraform/terraform output | awk '{print $3;exit}' | sed -e "s/\"//g")"
+
+# *** verifica se aplicação está de pé
+# sudo lsof -iTCP -sTCP:LISTEN -P | grep :3000
